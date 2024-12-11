@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c1{
+            font-size: 15px;
+            border: 2px solid red;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <input type="text"/>
+    <input type="text">
+    <input type="text" name="" id="">
+    <script>
+        let r= document.getElementsByTagName("input")[2]
+        r.placeholder="enter data"
+        r.value="default value"
+        r.style.color="green"
+        r.style.backgroundColor="purple"
+        r.className="c1"
+        console.log(r.type)
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .con{
+            width: 100%;
+            background-color: aqua;
+          margin-bottom: 30px;
+           
+        }
+        .hd{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            background-color:burlywood;
+            box-sizing: border-box;
+            padding: 0px 20px;
+            font-size: 25px;
+            color: white;
+            border: 2px double crimson;
+        }
+        h1{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+   <div class="con">
+        <div class="hd">
+            <h1>Heading-1</h1>
+            <i class="fa-solid fa-caret-down" onclick="fun(0)"></i>
+        </div>
+        <p style="display: none;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex mollitia ratione explicabo quasi repellendus, illum eius. Quod quo officiis nisi!</p>
+        <div class="hd">
+            <h1>Heading-1</h1>
+            <i class="fa-solid fa-caret-down" onclick="fun(1)"></i>
+        </div>
+        <p style="display: none;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex mollitia ratione explicabo quasi repellendus, illum eius. Quod quo officiis nisi!</p>
+        <div class="hd">
+            <h1>Heading-1</h1>
+            <i class="fa-solid fa-caret-down" onclick="fun(2)"></i>
+        </div>
+        <p style="display: none;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex mollitia ratione explicabo quasi repellendus, illum eius. Quod quo officiis nisi!</p>
+        <div class="hd">
+            <h1>Heading-1</h1>
+            <i class="fa-solid fa-caret-down" onclick="fun(3)"></i>
+        </div>
+        <p style="display: none;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex mollitia ratione explicabo quasi repellendus, illum eius. Quod quo officiis nisi!</p>
+        <div class="hd">
+            <h1>Heading-1</h1>
+            <i class="fa-solid fa-caret-down" onclick="fun(4)"></i>
+        </div>
+        <p style="display: none;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex mollitia ratione explicabo quasi repellendus, illum eius. Quod quo officiis nisi!</p>
+        
+    </div> 
+    <script>
+        let ir=document.getElementsByTagName("i")
+        let pr=document.getElementsByTagName("p")        
+        let i=0
+        
+        let fun=(ind)=>{
+            if(ind==i){
+                if(pr[i].style.display=="none"){
+                    pr[i].style.display="block"
+                    ir[i].className="fa-solid fa-caret-up"
+                }
+                else{
+                    pr[i].style.display="none"
+                    ir[i].className="fa-solid fa-caret-down"
+                }
+            }
+            else{
+                pr[i].style.display="none"
+                ir[i].className="fa-solid fa-caret-down"
+                pr[ind].style.display="block"
+                 ir[ind].className="fa-solid fa-caret-up"
+                 i=ind
+            }
+        }
+  </script>
+</body>
+</html>

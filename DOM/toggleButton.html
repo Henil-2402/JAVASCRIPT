@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>0</div>
+    <button>Start</button>
+    <script>
+        let dr=document.getElementsByTagName("div")[0]
+        let br=document.getElementsByTagName("button")[0]
+
+        br.addEventListener("click",start)
+        let c=0,iid=-1
+
+        let inc=()=>{
+            c++
+            dr.innerHTML=c
+        }
+        function start(){
+            iid=setInterval(inc,1000)
+            br.innerHTML="stop"
+            br.removeEventListener("click",start)
+            br.addEventListener("click",stop)
+        }
+        function stop(){
+            clearInterval(iid)
+            br.innerHTML="start"
+            br.removeEventListener("click",stop)
+            br.addEventListener("click",start)
+        }
+    </script>
+</body>
+</html>

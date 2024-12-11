@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"/>
+    <button onclick="add()">ADD</button>
+    <ul>
+
+    </ul>
+    <script>
+        let ipr=document.getElementsByTagName("input")[0]
+        let ulr=document.getElementsByTagName("ul")[0]
+        let a=[]
+
+        let disp=()=>{
+            let s=''
+            for(let i=0;i<a.length;i++){
+                s=s+`<li>${a[i]}</li>`
+            }
+            ulr.innerHTML=s
+        }
+        let add=()=>{
+            a.push(ipr.value)
+            console.log(a)
+            ipr.value=""
+            disp()
+        }
+    </script>
+</body>
+</html>

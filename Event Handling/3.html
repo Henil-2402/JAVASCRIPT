@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Currency Convertor</h1>
+    RS:<input type="text" />
+    <div>
+        <button onclick="fun('$')">$</button>
+        <button onclick="fun('₿')">₿</button>
+        <button onclick="fun('€')">€</button>
+        <button onclick="fun('£')">£</button>
+    </div>
+    <div>Result: <span></span></div>
+
+    <script>
+        let tfr=document.getElementsByTagName("input")[0]
+        let sr=document.getElementsByTagName("span")[0]
+
+        function fun(c)
+        {
+            let a=parseInt(tfr.value)
+            let r
+
+            switch(c)
+            {
+                case '$':
+                    r=a*84.34
+                    break
+                case '₿':
+                    r=a*6313558.09
+                    break
+                case '€':
+                    r=a*90.77
+                    break
+                case '£':
+                    r=a*109.19
+                    break
+            }
+            sr.innerHTML=r
+        }
+    </script>
+</body>
+</html>

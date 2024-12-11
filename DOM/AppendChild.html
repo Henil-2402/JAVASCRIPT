@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="con">
+
+    </div>
+    <button onclick="fun()">ADD</button>
+    <script>
+        let con=document.getElementsByClassName("con")[0]
+        let fun=()=>{
+            let ne=document.createElement("input")
+            ne.type="text"
+            ne.placeholder="Enter Text"
+            console.log(ne)
+            con.appendChild(ne)
+        }
+    </script>
+</body>
+</html>

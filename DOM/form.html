@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enter Name"/><br>
+        <input type="text" placeholder="Enter Phno"/><br>
+        <input type="text" placeholder="Enter E-mail"><br>
+        <input type="date"/><br>
+        <div>Gender
+            <input type="radio" value="male" name="gen" checked/>Male
+            <input type="radio" value="female" name="gen" />Female
+        </div>
+        <select>
+            <option value="gj">Gujarat</option>
+            <option value="ap">Andhra</option>
+            <option value="tg">Telangana</option>
+            <option value="mh">Maharastra</option>
+        </select>
+        <input type="button" onclick="add()" value="add">ADD
+    </form>
+    <table>
+
+    </table>
+    <script>
+        let ipr=document.getElementsByTagName("input")
+        let sr=document.getElementsByTagName("select")[0]
+        let tbr=document.getElementsByTagName("table")[0]
+
+        let a=[]
+
+        let disp=()=>{
+            let s="<tr><th>SNO</th><td>Name</td><td>Phno</td><td>E-mail</td><td>DOB</td><td>Gender</td><td>State</td></tr>"
+            
+            for(let i=0;i<a.length;i++){
+                s=s+`<tr><td>${i+1}</td>
+                        <td>${a[i].name}</td>
+                        <td>${a[i].phno}</td>
+                        <td>${a[i].email}</td>
+                        <td>${a[i].dob}</td>
+                        <td>${a[i].gen}</td>
+                        <td>${a[i].state}</td>
+                         </tr>`
+            }
+            tbr.innerHTML=s
+        }
+        let add=()=>{
+            let obj={}
+            obj.name=ipr[0].value
+            obj.phno=ipr[1].value
+            obj.email=ipr[2].value
+            obj.dob=ipr[3].value
+            obj.gen=ipr[4].checked?"male":"female"
+            obj.state=sr.value
+            console.log(obj)
+            a.push(obj)
+
+            document.getElementsByTagName("form")[0].reset
+            disp()
+        }
+    </script>
+</body>
+</html>

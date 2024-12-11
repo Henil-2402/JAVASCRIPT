@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>CLick ME</button>
+    <script>
+        let btn=document.getElementsByTagName("button")[0]
+        btn.addEventListener("click",fun)
+
+        function fun(){
+            alert("you cannot click once agian")
+            btn.removeEventListener("click",fun)
+        }
+    </script>
+</body>
+</html>

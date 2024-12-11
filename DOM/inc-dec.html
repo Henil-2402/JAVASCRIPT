@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            font-size:20px;
+            width:30px;
+            height:30px;
+            text-align: center;
+            background-color: burlywood;
+        }
+        button{
+            width: 120px;
+            height: 35px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="0" />
+    <button onclick="inc()" style="background-color: rgb(5, 171, 5);">Increment</button>
+    <button onclick="dec()" style="background-color: red;">Decrement</button>
+    <button onclick="cl()" style="background-color: blue;">Clear</button>
+    <script>
+        let ipr=document.getElementsByTagName("input")[0]
+        let count=0
+       let inc=()=>{
+            count=count+1
+            ipr.value=count
+            
+        }
+        let dec=()=>{
+            count=count-1
+            ipr.value=count
+        }
+        let cl=()=>{
+            ipr.value=""
+            count=0 
+        }
+       
+    </script>
+</body>
+</html>

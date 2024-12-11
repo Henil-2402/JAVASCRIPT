@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" />
+    <input type="text" />
+    <div>
+        <button onclick="fun('+')">+</button>
+        <button onclick="fun('-')">-</button>
+        <button onclick="fun('*')">*</button>
+        <button onclick="fun('/')">/</button>
+        <button onclick="fun('%')">%</button>
+        <button onclick="fun('**')">**</button>
+    </div>
+    <div>Result: <span></span></div>
+
+    <script>
+        let tfr=document.getElementsByTagName("input")
+        let sr=document.getElementsByTagName("span")[0]
+        
+        function fun(op){
+            let a=parseInt(tfr[0].value)
+            let b=parseInt(tfr[1].value)
+            let r
+
+            switch(op){
+                case '+':
+                    r=a+b
+                    break
+                case '+':
+                    r=a+b
+                    break
+                case '-':
+                    r=a-b
+                    break
+                case '*':
+                    r=a*b
+                    break
+                case '/':
+                    r=a/b
+                    break
+                case '%':
+                    r=a%b
+                    break
+                case '**':
+                    r=a**b
+                    break
+            }
+            sr.innerHTML=r
+        }
+    </script>
+</body>
+</html>
