@@ -6,41 +6,52 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text"/>
+    <input type="text" placeholder="Enter Text">
     <button>ADD</button>
-    <ul>
-
-    </ul>
+    <ul></ul>
     <script>
         let ipr=document.getElementsByTagName("input")[0]
         let btn=document.getElementsByTagName("button")[0]
         let ulr=document.getElementsByTagName("ul")[0]
         let er=null
+
         btn.addEventListener("click",add)
-
         function add(){
-            let li=document.createElement("li")
-            let span=document.createElement("span")
-            span.innerHTML=ipr.value
-           
-
+            let lir=document.createElement("li")
+            let spanr=document.createElement("span")
+            spanr.innerHTML=ipr.value
+            
             let edbtn=document.createElement("button")
             edbtn.innerHTML="EDIT"
-            edbtn.addEventListener("click",()=>edit(span))
-
+            edbtn.addEventListener("click",()=>edit(spanr))
+            
             let delbtn=document.createElement("button")
             delbtn.innerHTML="DELETE"
-            delbtn.addEventListener("click",()=>del(li))
+            delbtn.addEventListener("click",()=>del(lir))
 
-            li.appendChild(span)
-            li.appendChild(edbtn)
-            li.appendChild(delbtn)
-            ulr.appendChild(li)
+            lir.appendChild(spanr)
+            lir.appendChild(edbtn)
+            lir.appendChild(delbtn)
+        
+            ulr.appendChild(lir)
             ipr.value=""
         }
-        function del(er)
-        {
+        function del(er){
             ulr.removeChild(er)
+        }
+        function edit(sr){
+            ipr.value=sr.innerHTML
+            btn.innerHTML="UPDATE"
+            btn.removeEventListener("click",add)
+            btn.addEventListener("click",upd)
+            er=sr
+        }
+        function upd(){
+            er.innerHTML=ipr.value
+            btn.innerHTML="ADD"
+            btn.removeEventListener("click",upd)
+            btn.addEventListener("click",add)
+            ipr.value=""
         }
     </script>
 </body>
