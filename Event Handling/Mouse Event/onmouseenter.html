@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            width: 300px;
+            height: 400px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="con" onmouseenter="fun(event)" onmouseleave="fun1(event)"></div>
+    <p></p>
+    <script>
+        let pr=document.getElementsByTagName("p")[0]
+        let fun=(e)=>{
+            pr.innerHTML="mouse entered at"+e.offsetX+","+e.offsetY
+        }
+        let fun1=(e)=>{
+            pr.innerHTML="mouse exit at"+e.offsetX+","+e.offsetY
+        }
+    </script>
+</body>
+</html>

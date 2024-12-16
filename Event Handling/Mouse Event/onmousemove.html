@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            width: 300px;
+            height: 400px;
+            background-color: aqua;
+            position: relative;
+            cursor:grab;
+        }
+        .circle{
+            position: absolute;
+            top:0px;
+            left: 0px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="con" onmousemove="fun(event)" onmouseleave="fun1()">
+        <div class="circle"></div>
+    </div>
+    <script>
+        let cr=document.getElementsByClassName("circle")[0]
+        let fun=(e)=>{
+            cr.style.top=e.offsetY+"px"
+            cr.style.left=e.offsetX+"px"
+        }
+        let fun1=()=>{
+            cr.style.top="0px"
+            cr.style.left="0px"
+        }
+    </script>
+</body>
+</html>
