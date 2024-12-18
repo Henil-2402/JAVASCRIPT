@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" name="name"/>
+        <input type="text" name="phno"/>
+        <input type="date" name="dob"/>
+        <input type="radio" name="gen" value="male" checked/>Male
+        <input type="radio" name="gen" value="female"/>Female
+        <input type="checkbox" value="gujarati">Gujarati 
+        <input type="checkbox" value="english">English 
+        <input type="checkbox" value="hindi">Hindi 
+        <input type="range" min="0" max="100" value="0">
+        <select name="selected">
+            <option value="" selected disabled>Select Any option</option>
+            <option value="gj">Gujarat</option>
+            <option value="mh">Maharastra</option>
+            <option value="tg">Telangana</option>
+        </select>
+        <textarea cols="30" rows="5"></textarea>
+        <button onclick="fun()">ADD</button>
+    </div>
+    <script>
+        let ipr=document.getElementsByTagName("input")
+        let dlr=document.getElementsByTagName("select")[0]
+        let tar=document.getElementsByTagName("textarea")[0]
+
+        let fun=()=>{
+            let obj={}
+            obj.name=ipr[0].value
+            ipr[0].value=""
+
+            obj.phno=ipr[1].value
+            ipr[1].value=""
+
+            obj.dob=ipr[2].value
+            ipr[2].value=""
+
+            obj.gen=ipr[3].checked?"male":"female"
+            ipr[3].checked=true
+        
+            let a=[]
+            if(ipr[5].checked){
+                a.push("gujarati")
+            }
+            if(ipr[6].checked){
+                a.push("english")
+            }
+            if(ipr[7].checked){
+                a.push("hindi")
+            }
+            ipr[5].checked=false
+            ipr[6].checked=false
+            ipr[7].checked=false
+            obj.lang=a
+
+            obj.rt=ipr[8].value
+            ipr[8].value=0
+
+            obj.st=dlr.value
+            dlr.value=""
+
+            obj.addr=tar.value
+            tar.value=""
+
+            console.log(obj)
+        }
+    </script>
+</body>
+</html>
