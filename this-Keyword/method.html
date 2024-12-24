@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //apply() and call() methods
+        function add(a,b,c){
+            return a+b+c
+        }
+        console.log(Math.min.apply(null,[5,8,2,1,2,5,8]))
+        console.log(add.apply(null,[5,9,2]))
+
+        console.log(Math.min.call(null,58,2,6,1,4))
+        console.log(add.call(null,5,8,2))
+
+        //bind() method
+        function fun(){
+            console.log(this)
+        }
+        let obj={"name":"xyz","age":20}
+        fun=fun.bind(obj)
+        fun()
+    </script>
+</body>
+</html>
